@@ -22,7 +22,7 @@ ${PDF_FOLDER}       ${OUTPUTDIR}${/}pdf
 *** Keywords ***
 Open the robot order
     [Arguments]     ${url}
-    Open Available Browser      ${url} 
+    Open Available Browser      ${url}    maximized=True
 
 *** Keywords ***
 Get Orders
@@ -37,7 +37,7 @@ Close modal
 # +
 *** Keywords***
 Fill Order Form
-    [Arguments]     ${order}=0
+    [Arguments]     ${order}
     Select From List By Index   head                                            ${order}[Head]
     Select Radio Button         body                                            ${order}[Body]
     Input Text    //input[@placeholder='Enter the part number for the legs']    ${order}[Legs]
